@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+
+  <body>
+    <main
+      class="countryCards d-flex flex-wrap justify-content-around"
+      style="background-color: rgb(236, 249, 255)"
+    ></main>
+
+    <script id="countries-temp" type="text/x-handlebars-template">
+      {{#each country}}
+        <div class="card my-5 mx-5 bg-secondary text-light" style="width: 18rem; background: linear-gradient(rgba(73, 73, 73, 0.835),rgba(8, 8, 8, 0.835)),  url({{flag}});
+        object-fit: cover; background-position: center">
+        <div style="width: 250; height: 200px; ">
+          <img src="{{flag}}" class="card-img-top py-3 px-3" style="display: inline-block;
+
+          height: 100%;
+          width: 100%;" alt="country-flag">
+        </div>
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">Region: {{region}}</p>
+            <p class="card-text">Population: {{population}}</p>
+            <p class="card-text">Capital: {{capital}}</p>
+            <p class="card-text">Languages: {{#lang languages}} {{this.name}}{{/lang}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+  </body>
+</html>
